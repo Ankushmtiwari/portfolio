@@ -8,7 +8,9 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
         }
         .profile-img {
             width: 150px;
@@ -16,6 +18,12 @@
         }
         .section {
             padding: 50px 0;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .navbar {
+            background: rgba(0, 0, 0, 0.8) !important;
         }
     </style>
 </head>
@@ -38,7 +46,7 @@
         </div>
     </nav>
     
-    <header class="text-center py-5 bg-primary text-white">
+    <header class="text-center py-5">
         <img src="profile.jpg" alt="Your Profile" class="profile-img">
         <h1 class="mt-3">Ankush Mani Tiwari</h1>
         <p>Software Engineer | Full-Stack Developer</p>
@@ -66,6 +74,26 @@
         <ul>
             <li><strong>Life Line Savior:</strong> A blood donation platform using Django & MySQL.</li>
             <li><strong>Supplier Management System:</strong> Web app using C#, .NET Core, and SQL Server.</li>
+        </ul>
+    </section>
+    
+    <section class="container section" id="organizations">
+        <h2>Organization & Clubs</h2>
+        <ul>
+            <li><strong>Founder – NISWARTH CARE CLUB AND TRUST (Regd. No. 1510/22)</strong></li>
+            <li>Established a non-profit organization dedicated to social welfare and humanitarian aid.</li>
+            <li>Successfully collaborated with 10,000+ people across India to support underprivileged communities.</li>
+            <li>Spearheaded initiatives to distribute food and facilitation kits, ensuring widespread impact.</li>
+            <li>Actively managing outreach programs, fundraising, and volunteer coordination to expand the organization’s reach.</li>
+        </ul>
+    </section>
+    
+    <section class="container section" id="awards">
+        <h2>Awards & Recognitions</h2>
+        <ul>
+            <li>Recognized for Social Impact – Acknowledged for significant contributions to community welfare and humanitarian efforts.</li>
+            <li>Leadership & Volunteer Excellence Award – Honored for mobilizing volunteers and leading large-scale charitable initiatives.</li>
+            <li>Community Service Recognition – Appreciated for efforts in distributing food and facilitation kits across India.</li>
         </ul>
     </section>
     
