@@ -10,6 +10,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+     <!-- Hamburger Icon -->
+     <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <!-- Navigation Bar Start -->
     <header>
         <nav class="navbar">
@@ -42,6 +48,11 @@
 
              <!-- Download Resume Button -->
         <a href="resume.pdf.pdf" class="btn download-btn" download>Download Resume</a>
+         <!-- New Button For Nishwarth Care Club Trust -->
+         <a href="https://ankushmtiwari.github.io/Nishwarth-Care-Club-Trust/" class="btn trust-btn" target="_blank">Visit NISWARTH CARE CLUB AND TRUST</a>
+         
+        <!-- WhatsApp Group Button -->
+        <a href="https://chat.whatsapp.com/Fic4CMELaxO2NK4PgY95ZA" class="btn whatsapp-btn" target="_blank">Join WhatsApp Group</a>
         </div>
         <div class="hero-image">
             <img src="images/Ankush.jpg.jpg" alt="Ankush Mani Tiwari">
@@ -239,6 +250,14 @@
     <p><strong>Hometown:</strong> Siwan, Bihar, India</p>
     <p><strong>Email:</strong> <a href="mailto:ankushmani80@gmail.com">ankushmani80@gmail.com</a></p>   
 </section>
+<script>
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+</script>
 
   <!-- FOOTER SECTION -->
 <footer class="footer" style="background-color: #222; padding: 20px 0; text-align: center; color: white;">

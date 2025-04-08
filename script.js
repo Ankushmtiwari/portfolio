@@ -1,48 +1,58 @@
-// Smooth scroll for anchor links
+// Smooth Scroll for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', (e) => {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
+        const targetId = anchor.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
             behavior: 'smooth'
         });
     });
 });
 
-// Fade-in animation on scroll
+// Fade-In Animation on Scroll
 const faders = document.querySelectorAll('.fade-in');
 
 const appearOptions = {
-    threshold: 0,
-    rootMargin: "0px 0px -100px 0px"
+    threshold: 0.1, // Element 10% visible then trigger
+    rootMargin: "0px 0px -50px 0px"
 };
 
-const appearOnScroll = new IntersectionObserver(function(
-    entries,
-    appearOnScroll
-) {
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        } else {
-            entry.target.classList.add('appear');
-            appearOnScroll.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
     });
 }, appearOptions);
 
 faders.forEach(fader => {
     appearOnScroll.observe(fader);
 });
-const text = "Ankush Mani Tiwari";
-let index = 0;
-const speed = 150; // typing speed in milliseconds
+
+// Typing Text Effect
+const typingText = "Ankush Mani Tiwari";
+let typingIndex = 0;
+const typingSpeed = 100; // milliseconds per character
 
 function typeWriter() {
-    if (index < text.length) {
-        document.getElementById("typing-text").innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, speed);
+    const typingElement = document.getElementById("typing-text");
+    if (!typingElement) return;
+
+    if (typingIndex < typingText.length) {
+        typingElement.textContent += typingText.charAt(typingIndex);
+        typingIndex++;
+        setTimeout(typeWriter, typingSpeed);
     }
 }
 
-window.onload = typeWriter;
+window.addEventListener('load', typeWriter);
+
+// Hamburger Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger ? .addEventListener('click', () => {
+    navLinks ? .classList.toggle('open');
+    hamburger.classList.toggle('active');
+});
